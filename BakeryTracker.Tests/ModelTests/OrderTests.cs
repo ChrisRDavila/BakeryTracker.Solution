@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BakeryTracker.Models;
 using System;
+using System.Collections.Generic;
 
 
 namespace BakeryTracker.Tests
@@ -130,6 +131,17 @@ namespace BakeryTracker.Tests
       DateTime result = newOrder.Date;
       //Assert
       Assert.AreEqual(updatedDate, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      // Arrange
+      List<Order> newList = new List<Order> { };
+      // Act
+      List<Order> result = Order.GetAll();
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }    
