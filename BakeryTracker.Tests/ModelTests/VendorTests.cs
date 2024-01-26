@@ -113,5 +113,19 @@ namespace BakeryTracker.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      //Arrange
+      string name01 = "Jeff";
+      string name02 = "Fred";
+      Vendor newVendor1 = new Vendor(name01, "business1");
+      Vendor newVendor2 = new Vendor(name02, "business2");
+      //Act
+      Vendor result = Vendor.Find(2);
+      //Assert
+      Assert.AreEqual(newVendor2, result);
+    }
   } 
 }
