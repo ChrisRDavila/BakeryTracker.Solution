@@ -26,5 +26,17 @@ namespace BakeryTracker.Tests
       //Assert
       Assert.AreEqual(name, result);
     }
+
+    public void SetName_SetName_String()
+    {
+      //Arrange
+      string name = "Bread";
+      Vendor newVendor = new Vendor(name);
+      //Act
+      string updatedName = "Pastry";
+      newVendor.Name = updatedName;
+      string result = newVendor.Name;
+      //Assert
+      Assert.AreEqual(updatedName, result);
   }
 }
