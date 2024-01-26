@@ -4,9 +4,10 @@ namespace BakeryTracker.Models
 {
   public class Vendor
   {
-    public Vendor()
+    public string Name { get; }
+    public Vendor(string name)
     {
-      Console.WriteLine("Vendor created");
+      Name = name;
     }
     
   }
