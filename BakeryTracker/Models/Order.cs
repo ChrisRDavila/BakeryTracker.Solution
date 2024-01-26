@@ -1,3 +1,5 @@
+using System;
+
 namespace BakeryTracker.Models
 {
   public class Order 
@@ -5,11 +7,13 @@ namespace BakeryTracker.Models
     public string Title { get; set; }
     public string Description { get; set; }
     public decimal Price { get; set; }
-    public Order(string title, string description, decimal price )
+    public DateTime Date { get; }
+    public Order(string title, string description, decimal price, DateTime date)
     {
       Title = title;
       Description = description;
       Price = price;
+      Date = date;
     }
 
   }

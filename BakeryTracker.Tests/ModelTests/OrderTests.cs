@@ -12,7 +12,7 @@ namespace BakeryTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("title", "description", 5.00M);
+      Order newOrder = new Order("title", "description", 5.00M, new DateTime(2021, 1, 1));
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -21,7 +21,7 @@ namespace BakeryTracker.Tests
     {
       //Arrange
       string title = "Bread";
-      Order newOrder = new Order(title, "description", 5.00M);
+      Order newOrder = new Order(title, "description", 5.00M, new DateTime(2021, 1, 1));
       //Act
       string result = newOrder.Title;
       //Assert
@@ -33,7 +33,7 @@ namespace BakeryTracker.Tests
     {
       //Arrange
       string title = "Bread";
-      Order newOrder = new Order(title, "description", 5.00M);
+      Order newOrder = new Order(title, "description", 5.00M, new DateTime(2021, 1, 1));
       //Act
       string updatedTitle = "Pastry";
       newOrder.Title = updatedTitle;
@@ -48,7 +48,7 @@ namespace BakeryTracker.Tests
       //Arrange
       string title = "Bread";
       string description = "Whole Wheat";
-      Order newOrder = new Order(title, description, 5.00M);
+      Order newOrder = new Order(title, description, 5.00M, new DateTime(2021, 1, 1));
       //Act
       string result = newOrder.Description;
       //Assert
@@ -61,7 +61,7 @@ namespace BakeryTracker.Tests
       //Arrange
       string title = "Bread";
       string description = "Whole Wheat";
-      Order newOrder = new Order(title, description, 5.00M);
+      Order newOrder = new Order(title, description, 5.00M, new DateTime(2021, 1, 1));
       //Act
       string updatedDescription = "White";
       newOrder.Description = updatedDescription;
@@ -77,7 +77,7 @@ namespace BakeryTracker.Tests
       string title = "Bread";
       string description = "Whole Wheat";
       decimal price = 5.00M;
-      Order newOrder = new Order(title, description, price);
+      Order newOrder = new Order(title, description, price, new DateTime(2021, 1, 1));
       //Act
       decimal result = newOrder.Price;
       //Assert
@@ -91,7 +91,7 @@ namespace BakeryTracker.Tests
       string title = "Bread";
       string description = "Whole Wheat";
       decimal price = 5.00M;
-      Order newOrder = new Order(title, description, price);
+      Order newOrder = new Order(title, description, price, new DateTime(2021, 1, 1));
       //Act
       decimal updatedPrice = 6.00M;
       newOrder.Price = updatedPrice;
