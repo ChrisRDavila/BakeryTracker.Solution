@@ -14,7 +14,7 @@ namespace BakeryTracker.Tests
     {
       Order.ClearAll();
     }
-    
+
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order()
     {
@@ -146,6 +146,26 @@ namespace BakeryTracker.Tests
       // Act
       List<Order> result = Order.GetAll();
       // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      //Arrange
+      string title01 = "Bread";
+      string title02 = "Pastry";
+      string description01 = "Whole Wheat";
+      string description02 = "Croissant";
+      decimal price01 = 5.00M;
+      decimal price02 = 3.00M;
+      DateTime date01 = new DateTime(2021, 1, 1);
+      DateTime date02 = new DateTime(2021, 1, 2);
+      Order newOrder1 = new Order(title01, description01, price01, date01);
+      Order newOrder2 = new Order(title02, description02, price02, date02);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      //Act
+      List<Order> result = Order.GetAll();
+      //Assert
       CollectionAssert.AreEqual(newList, result);
     }
   }
