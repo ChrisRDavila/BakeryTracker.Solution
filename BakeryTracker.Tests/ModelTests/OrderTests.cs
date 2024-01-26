@@ -11,7 +11,7 @@ namespace BakeryTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("title");
+      Order newOrder = new Order("title", "description");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -20,7 +20,7 @@ namespace BakeryTracker.Tests
     {
       //Arrange
       string title = "Bread";
-      Order newOrder = new Order(title);
+      Order newOrder = new Order(title, "description");
       //Act
       string result = newOrder.Title;
       //Assert
@@ -32,7 +32,7 @@ namespace BakeryTracker.Tests
     {
       //Arrange
       string title = "Bread";
-      Order newOrder = new Order(title);
+      Order newOrder = new Order(title, "description");
       //Act
       string updatedTitle = "Pastry";
       newOrder.Title = updatedTitle;
