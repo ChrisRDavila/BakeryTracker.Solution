@@ -100,5 +100,17 @@ namespace BakeryTracker.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_VendorsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      //Arrange
+      string name = "Jeff";
+      Vendor newVendor = new Vendor(name, "business");
+      //Act
+      int result = newVendor.Id;
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   } 
 }
