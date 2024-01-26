@@ -53,5 +53,20 @@ namespace BakeryTracker.Tests
       //Assert
       Assert.AreEqual(description, result);
     }
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      //Arrange
+      string title = "Bread";
+      string description = "Whole Wheat";
+      Order newOrder = new Order(title, description);
+      //Act
+      string updatedDescription = "White";
+      newOrder.Description = updatedDescription;
+      string result = newOrder.Description;
+      //Assert
+      Assert.AreEqual(updatedDescription, result);
+    }
   }
 }    

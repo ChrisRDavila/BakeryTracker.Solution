@@ -9,5 +9,6 @@ namespace BakeryTracker.Models
       Title = title;
       Description = description;
     }
+
   }
 }
