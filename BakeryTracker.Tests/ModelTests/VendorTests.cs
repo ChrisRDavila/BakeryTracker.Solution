@@ -11,7 +11,7 @@ namespace BakeryTracker.Tests
     [TestMethod]
     public void VendorConstructor_CreateInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("name");
+      Vendor newVendor = new Vendor("name", "business");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
@@ -20,7 +20,7 @@ namespace BakeryTracker.Tests
     {
       //Arrange
       string name = "Jeff";
-      Vendor newVendor = new Vendor(name);
+      Vendor newVendor = new Vendor(name, "business");
       //Act
       string result = newVendor.Name;
       //Assert
@@ -31,7 +31,7 @@ namespace BakeryTracker.Tests
     {
       //Arrange
       string name = "Jeff";
-      Vendor newVendor = new Vendor(name);
+      Vendor newVendor = new Vendor(name, "business");
       //Act
       string updatedName = "Fred";
       newVendor.Name = updatedName;
