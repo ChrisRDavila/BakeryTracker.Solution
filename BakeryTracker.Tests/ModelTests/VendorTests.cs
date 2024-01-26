@@ -38,5 +38,6 @@ namespace BakeryTracker.Tests
       string result = newVendor.Name;
       //Assert
       Assert.AreEqual(updatedName, result);
-  }
+    }
+  } 
 }
