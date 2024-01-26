@@ -9,6 +9,7 @@ namespace BakeryTracker.Models
     public string Description { get; set; }
     public decimal Price { get; set; }
     public DateTime Date { get; set; }
+    public int Id { get; }
     private static List<Order> _instances = new List<Order> { };
     public Order(string title, string description, decimal price, DateTime date)
     {
@@ -17,6 +18,7 @@ namespace BakeryTracker.Models
       Price = price;
       Date = date;
       _instances.Add(this);
+      Id = _instances.Count;
     }
 
     public static List<Order> GetAll()
