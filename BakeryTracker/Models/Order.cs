@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace BakeryTracker.Models
 {
@@ -8,12 +9,23 @@ namespace BakeryTracker.Models
     public string Description { get; set; }
     public decimal Price { get; set; }
     public DateTime Date { get; set; }
+    private static List<Order> _instances = new List<Order> { };
     public Order(string title, string description, decimal price, DateTime date)
     {
       Title = title;
       Description = description;
       Price = price;
       Date = date;
+      _instances.Add(this);
+    }
+
+    public static List<Order> GetAll()
+    {
+      return _instances;
+    }
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
 
   }
