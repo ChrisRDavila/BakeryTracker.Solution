@@ -19,7 +19,7 @@ namespace BakeryTracker.Tests
     public void GetName_ReturnsVendorName_String()
     {
       //Arrange
-      string name = "Bread";
+      string name = "Jeff";
       Vendor newVendor = new Vendor(name);
       //Act
       string result = newVendor.Name;
@@ -30,14 +30,27 @@ namespace BakeryTracker.Tests
     public void SetName_SetName_String()
     {
       //Arrange
-      string name = "Bread";
+      string name = "Jeff";
       Vendor newVendor = new Vendor(name);
       //Act
-      string updatedName = "Pastry";
+      string updatedName = "Fred";
       newVendor.Name = updatedName;
       string result = newVendor.Name;
       //Assert
       Assert.AreEqual(updatedName, result);
+    }
+
+    [TestMethod]
+    public void GetBusiness_ReturnsVendorBusiness_String()
+    {
+      //Arrange
+      string name = "Jeff";
+      string business = "Jeffs Cafe";
+      Vendor newVendor = new Vendor(name, business);
+      //Act
+      string result = newVendor.Business;
+      //Assert
+      Assert.AreEqual(business, result);
     }
   } 
 }
