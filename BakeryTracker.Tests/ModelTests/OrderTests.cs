@@ -11,7 +11,7 @@ namespace BakeryTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("title", "description");
+      Order newOrder = new Order("title", "description", 5.00M);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -20,7 +20,7 @@ namespace BakeryTracker.Tests
     {
       //Arrange
       string title = "Bread";
-      Order newOrder = new Order(title, "description");
+      Order newOrder = new Order(title, "description", 5.00M);
       //Act
       string result = newOrder.Title;
       //Assert
@@ -32,7 +32,7 @@ namespace BakeryTracker.Tests
     {
       //Arrange
       string title = "Bread";
-      Order newOrder = new Order(title, "description");
+      Order newOrder = new Order(title, "description", 5.00M);
       //Act
       string updatedTitle = "Pastry";
       newOrder.Title = updatedTitle;
@@ -47,7 +47,7 @@ namespace BakeryTracker.Tests
       //Arrange
       string title = "Bread";
       string description = "Whole Wheat";
-      Order newOrder = new Order(title, description);
+      Order newOrder = new Order(title, description, 5.00M);
       //Act
       string result = newOrder.Description;
       //Assert
@@ -60,7 +60,7 @@ namespace BakeryTracker.Tests
       //Arrange
       string title = "Bread";
       string description = "Whole Wheat";
-      Order newOrder = new Order(title, description);
+      Order newOrder = new Order(title, description, 5.00M);
       //Act
       string updatedDescription = "White";
       newOrder.Description = updatedDescription;
@@ -70,15 +70,15 @@ namespace BakeryTracker.Tests
     }
 
     [TestMethod]
-    public void GetPrice_ReturnsOrderPrice_Int()
+    public void GetPrice_ReturnsOrderPrice_Decimal()
     {
       //Arrange
       string title = "Bread";
       string description = "Whole Wheat";
-      int price = 5;
+      decimal price = 5.00M;
       Order newOrder = new Order(title, description, price);
       //Act
-      int result = newOrder.Price;
+      decimal result = newOrder.Price;
       //Assert
       Assert.AreEqual(price, result);
     }

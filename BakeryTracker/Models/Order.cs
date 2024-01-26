@@ -4,10 +4,12 @@ namespace BakeryTracker.Models
   {
     public string Title { get; set; }
     public string Description { get; set; }
-    public Order(string title, string description)
+    public decimal Price { get; }
+    public Order(string title, string description, decimal price )
     {
       Title = title;
       Description = description;
+      Price = price;
     }
 
   }
