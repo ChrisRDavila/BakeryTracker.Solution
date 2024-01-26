@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BakeryTracker.Models;
+using System;
 
 
 namespace BakeryTracker.Tests
@@ -97,6 +98,21 @@ namespace BakeryTracker.Tests
       decimal result = newOrder.Price;
       //Assert
       Assert.AreEqual(updatedPrice, result);
+    }
+
+    [TestMethod]
+    public void GetDate_ReturnsOrderDate_DateTime()
+    {
+      //Arrange
+      string title = "Bread";
+      string description = "Whole Wheat";
+      decimal price = 5.00M;
+      DateTime date = new DateTime(2021, 1, 1);
+      Order newOrder = new Order(title, description, price, date);
+      //Act
+      DateTime result = newOrder.Date;
+      //Assert
+      Assert.AreEqual(date, result);
     }
   }
 }    
