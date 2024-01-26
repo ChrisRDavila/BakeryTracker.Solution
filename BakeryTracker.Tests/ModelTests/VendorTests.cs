@@ -52,5 +52,20 @@ namespace BakeryTracker.Tests
       //Assert
       Assert.AreEqual(business, result);
     }
+
+    [TestMethod]
+    public void SetBusiness_SetBusiness_String()
+    {
+      //Arrange
+      string name = "Jeff";
+      string business = "Jeffs Cafe";
+      Vendor newVendor = new Vendor(name, business);
+      //Act
+      string updatedBusiness = "Jeffs Bakery";
+      newVendor.Business = updatedBusiness;
+      string result = newVendor.Business;
+      //Assert
+      Assert.AreEqual(updatedBusiness, result);
+    }
   } 
 }
