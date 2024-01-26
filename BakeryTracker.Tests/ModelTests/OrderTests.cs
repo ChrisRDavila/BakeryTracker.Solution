@@ -168,5 +168,19 @@ namespace BakeryTracker.Tests
       //Assert 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      //Arrange
+      string title = "Bread";
+      string description = "Whole Wheat";
+      decimal price = 5.00M;
+      DateTime date = new DateTime(2021, 1, 1);
+      Order newOrder = new Order(title, description, price, date);
+      //Act
+      int result = newOrder.Id;
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }    
