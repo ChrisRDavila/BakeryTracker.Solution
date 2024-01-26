@@ -106,7 +106,8 @@ namespace BakeryTracker.Tests
     {
       //Arrange
       string name = "Jeff";
-      Vendor newVendor = new Vendor(name, "business");
+      string business = "Jeffs Cafe";
+      Vendor newVendor = new Vendor(name, business);
       //Act
       int result = newVendor.Id;
       //Assert
