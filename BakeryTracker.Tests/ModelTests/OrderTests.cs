@@ -18,10 +18,27 @@ namespace BakeryTracker.Tests
     [TestMethod]
     public void GetTitle_ReturnsOrderTitle_String()
     {
+      //Arrange
       string title = "Bread";
       Order newOrder = new Order(title);
+      //Act
       string result = newOrder.Title;
+      //Assert
       Assert.AreEqual(title, result);
+    }
+
+    [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      //Arrange
+      string title = "Bread";
+      Order newOrder = new Order(title);
+      //Act
+      string updatedTitle = "Pastry";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+      //Assert
+      Assert.AreEqual(updatedTitle, result);
     }
   }
 }    
