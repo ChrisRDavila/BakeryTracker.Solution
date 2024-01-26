@@ -82,5 +82,21 @@ namespace BakeryTracker.Tests
       //Assert
       Assert.AreEqual(price, result);
     }
+
+    [TestMethod]
+    public void SetPrice_SetPrice_Decimal()
+    {
+      //Arrange
+      string title = "Bread";
+      string description = "Whole Wheat";
+      decimal price = 5.00M;
+      Order newOrder = new Order(title, description, price);
+      //Act
+      decimal updatedPrice = 6.00M;
+      newOrder.Price = updatedPrice;
+      decimal result = newOrder.Price;
+      //Assert
+      Assert.AreEqual(updatedPrice, result);
+    }
   }
 }    
