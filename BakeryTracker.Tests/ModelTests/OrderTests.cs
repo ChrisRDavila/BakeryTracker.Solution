@@ -114,5 +114,22 @@ namespace BakeryTracker.Tests
       //Assert
       Assert.AreEqual(date, result);
     }
+
+    [TestMethod]
+    public void SetDate_SetDate_DateTime()
+    {
+      //Arrange
+      string title = "Bread";
+      string description = "Whole Wheat";
+      decimal price = 5.00M;
+      DateTime date = new DateTime(2021, 1, 1);
+      Order newOrder = new Order(title, description, price, date);
+      //Act
+      DateTime updatedDate = new DateTime(2021, 1, 2);
+      newOrder.Date = updatedDate;
+      DateTime result = newOrder.Date;
+      //Assert
+      Assert.AreEqual(updatedDate, result);
+    }
   }
 }    
