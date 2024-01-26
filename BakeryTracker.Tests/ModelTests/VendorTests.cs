@@ -1,13 +1,20 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BakeryTracker.Models;
+using System.Collections.Generic;
+using System;
 
 
 namespace BakeryTracker.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
 
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+
     [TestMethod]
     public void VendorConstructor_CreateInstanceOfVendor_Vendor()
     {
