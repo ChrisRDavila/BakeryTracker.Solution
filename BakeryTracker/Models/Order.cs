@@ -2,9 +2,10 @@ namespace BakeryTracker.Models
 {
   public class Order 
   {
-    public Order()
+    public string Title { get; }
+    public Order(string title)
     {
-      //Props
+      Title = title;
     }
   }
 }
