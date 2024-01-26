@@ -69,16 +69,14 @@ namespace BakeryTracker.Tests
     }
 
     [TestMethod]
-    public void GetId_ReturnsVendorId_Int()
+    public void GetAll_GetEmptyList_VendorList()
     {
       //Arrange
-      string name = "Jeff";
-      string business = "Jeffs Cafe";
-      Vendor newVendor = new Vendor(name, business);
+      List<Vendor> newList = new List<Vendor> { };
       //Act
-      int result = newVendor.Id;
+      List<Vendor> result = Vendor.GetAll();
       //Assert
-      Assert.AreEqual(1, result);
+      CollectionAssert.AreEqual(newList, result);
     }
   } 
 }

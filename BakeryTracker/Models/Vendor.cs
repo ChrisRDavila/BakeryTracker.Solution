@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace BakeryTracker.Models
 {
@@ -10,6 +11,7 @@ namespace BakeryTracker.Models
     {
       Name = name;
       Business = business;
+      _instances.Add(this);
     }
     
   }
