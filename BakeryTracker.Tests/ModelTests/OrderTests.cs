@@ -68,5 +68,19 @@ namespace BakeryTracker.Tests
       //Assert
       Assert.AreEqual(updatedDescription, result);
     }
+
+    [TestMethod]
+    public void GetPrice_ReturnsOrderPrice_Int()
+    {
+      //Arrange
+      string title = "Bread";
+      string description = "Whole Wheat";
+      int price = 5;
+      Order newOrder = new Order(title, description, price);
+      //Act
+      int result = newOrder.Price;
+      //Assert
+      Assert.AreEqual(price, result);
+    }
   }
 }    
