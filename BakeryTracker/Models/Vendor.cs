@@ -9,12 +9,14 @@ namespace BakeryTracker.Models
     public string Business { get; set; }
     public int Id { get; }
     public static List<Vendor> _instances = new List<Vendor> { };
+    public List<Order> Orders { get; set; }
     public Vendor(string name, string business)
     {
       Name = name;
       Business = business;
       _instances.Add(this);
       Id = _instances.Count;
+      Orders = new List<Order>{};
     }
 
     public static List<Vendor> GetAll()
@@ -30,6 +32,11 @@ namespace BakeryTracker.Models
     public static Vendor Find(int searchId)
     {
       return _instances[searchId - 1];
+    }
+
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
     }
     
   }

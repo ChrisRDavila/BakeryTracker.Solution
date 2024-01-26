@@ -146,5 +146,6 @@ namespace BakeryTracker.Tests
       List<Order> result = newVendor.Orders;
       //Assert
       CollectionAssert.AreEqual(newList, result);
+    }
   } 
 }
